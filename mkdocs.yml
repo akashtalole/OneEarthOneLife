@@ -1,0 +1,65 @@
+site_name: One Earth One Life
+site_description: One Earth, One Life — protecting our planet and every life it sustains.
+site_url: https://akashtalole.github.io/OneEarthOneLife/
+repo_name: akashtalole/OneEarthOneLife
+repo_url: https://github.com/akashtalole/OneEarthOneLife
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  icon:
+    logo: material/earth
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Get Involved: get-involved.md
+  - Resources: resources.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/akashtalole/OneEarthOneLife
+
+copyright: Copyright &copy; 2026 OneEarthOneLife contributors

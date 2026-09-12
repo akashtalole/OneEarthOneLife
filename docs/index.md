@@ -15,6 +15,7 @@ OneEarthOneLife is an open initiative for anyone who wants to understand, protec
 restore the natural world — through knowledge, small daily actions, and collective effort.
 
 [Get Involved](get-involved.md){ .md-button .md-button--primary }
+[See Earth Pulse](earth-pulse.md){ .md-button }
 [Learn More](about.md){ .md-button }
 
 </div>

@@ -7,6 +7,15 @@ Earth we all share.
 
 The site is live at: **https://akashtalole.github.io/OneEarthOneLife/**
 
+## Earth Pulse
+
+The [Earth Pulse](docs/earth-pulse.md) page shows a daily snapshot of the planet —
+atmospheric CO₂, global temperature anomaly, active hazard events, and significant
+earthquakes — pulled from free, key-less public APIs (NOAA, NASA GISTEMP, NASA EONET,
+USGS) by [`scripts/generate_earth_pulse.py`](scripts/generate_earth_pulse.py). A
+scheduled GitHub Actions workflow (`.github/workflows/earth-pulse.yml`) regenerates and
+commits the page daily.
+
 ## Tech
 
 Built with [MkDocs](https://www.mkdocs.org/) and the

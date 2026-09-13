@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon Footprint Calculator · OneEarthOneLife</title>
+  <meta name="description" content="Estimate your annual carbon footprint from home energy, transport, flights, diet, and consumption." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%232e7d32%22/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">🌍 OneEarthOneLife</a>
+      <h1>Carbon Footprint Calculator</h1>
+      <p class="subtitle">
+        A quick, educational estimate of your annual greenhouse-gas footprint —
+        not a precise carbon audit, but a useful starting point.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="calculator" novalidate>
+      <section class="card">
+        <h2>🏠 Home energy</h2>
+
+        <label for="electricity">Average monthly electricity use (kWh)</label>
+        <input type="number" id="electricity" name="electricity" min="0" step="1" value="300" inputmode="numeric" />
+
+        <label for="heating">Home heating (gas / oil / propane)</label>
+        <select id="heating" name="heating">
+          <option value="0">None / fully electric heat pump</option>
+          <option value="0.6">Low use</option>
+          <option value="1.6" selected>Average use</option>
+          <option value="3.2">High use</option>
+        </select>
+
+        <label for="household">People in your household (footprint is per person)</label>
+        <input type="number" id="household" name="household" min="1" step="1" value="1" inputmode="numeric" />
+      </section>
+
+      <section class="card">
+        <h2>🚗 Transport</h2>
+
+        <label for="carType">Primary car / fuel type</label>
+        <select id="carType" name="carType">
+          <option value="0">No car</option>
+          <option value="0.192" selected>Petrol car</option>
+          <option value="0.171">Diesel car</option>
+          <option value="0.106">Hybrid car</option>
+          <option value="0.053">Electric car</option>
+        </select>
+
+        <label for="carDistance">Distance driven per week (km)</label>
+        <input type="number" id="carDistance" name="carDistance" min="0" step="1" value="100" inputmode="numeric" />
+
+        <label for="shortFlights">Short-haul flights per year (one-way legs, &lt; 3 hrs)</label>
+        <input type="number" id="shortFlights" name="shortFlights" min="0" step="1" value="0" inputmode="numeric" />
+
+        <label for="longFlights">Long-haul flights per year (one-way legs, &gt; 6 hrs)</label>
+        <input type="number" id="longFlights" name="longFlights" min="0" step="1" value="0" inputmode="numeric" />
+      </section>
+
+      <section class="card">
+        <h2>🍽️ Diet</h2>
+
+        <label for="diet">Which best describes your diet?</label>
+        <select id="diet" name="diet">
+          <option value="3.3">Meat-heavy (meat most meals)</option>
+          <option value="2.5" selected>Average (meat a few times a week)</option>
+          <option value="1.9">Low-meat / pescatarian</option>
+          <option value="1.7">Vegetarian</option>
+          <option value="1.5">Vegan</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>🛍️ Goods &amp; consumption</h2>
+
+        <label for="consumption">General shopping &amp; consumption habits</label>
+        <select id="consumption" name="consumption">
+          <option value="0.5">Low — buy little, mostly secondhand/repaired</option>
+          <option value="1.5" selected>Average</option>
+          <option value="3">High — frequent new purchases</option>
+        </select>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Calculate my footprint</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="results" class="card results" hidden aria-live="polite">
+      <h2>Your estimated footprint</h2>
+      <p class="total"><span id="totalValue">0</span> tonnes CO₂e / year</p>
+
+      <div class="comparison">
+        <div class="bar-row">
+          <span>You</span>
+          <div class="bar-track"><div id="barYou" class="bar bar-you"></div></div>
+          <span id="barYouLabel"></span>
+        </div>
+        <div class="bar-row">
+          <span>Global average</span>
+          <div class="bar-track"><div class="bar bar-ref" style="width: 100%"></div></div>
+          <span>4.7 t</span>
+        </div>
+        <div class="bar-row">
+          <span>2030 Paris-aligned target</span>
+          <div class="bar-track"><div class="bar bar-target" style="width: 48.9%"></div></div>
+          <span>2.3 t</span>
+        </div>
+      </div>
+
+      <h3>Breakdown</h3>
+      <ul id="breakdown" class="breakdown"></ul>
+
+      <p id="message" class="message"></p>
+
+      <p class="footnote">
+        Estimates use commonly published average emission factors (EPA, DEFRA, IEA, and the
+        Poore &amp; Nemecek 2018 diet-footprint study) and are meant for awareness, not precise
+        accounting. Your actual footprint depends on your local electricity grid and many other
+        factors. For deeper context, see the
+        <a href="../earth-pulse/">Earth Pulse</a> and
+        <a href="../get-involved/">Get Involved</a> pages.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="../">&larr; Back to OneEarthOneLife</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

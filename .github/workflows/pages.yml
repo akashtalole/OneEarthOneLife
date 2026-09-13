@@ -33,6 +33,14 @@ jobs:
       - name: Build site
         run: mkdocs build --strict
 
+      - name: Include Carbon Footprint Calculator
+        run: |
+          mkdir -p site/calculator
+          cp carbon-footprint-calculator/index.html \
+             carbon-footprint-calculator/styles.css \
+             carbon-footprint-calculator/script.js \
+             site/calculator/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

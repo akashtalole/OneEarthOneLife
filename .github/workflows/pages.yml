@@ -33,13 +33,18 @@ jobs:
       - name: Build site
         run: mkdocs build --strict
 
-      - name: Include Carbon Footprint Calculator
+      - name: Include standalone tool projects
         run: |
-          mkdir -p site/calculator
-          cp carbon-footprint-calculator/index.html \
-             carbon-footprint-calculator/styles.css \
-             carbon-footprint-calculator/script.js \
-             site/calculator/
+          declare -A TOOLS=(
+            [carbon-footprint-calculator]=calculator
+            [water-footprint-calculator]=water-footprint
+            [tree-offset-estimator]=tree-offset
+          )
+          for src in "${!TOOLS[@]}"; do
+            dest="site/${TOOLS[$src]}"
+            mkdir -p "$dest"
+            cp "$src"/index.html "$src"/styles.css "$src"/script.js "$dest"/
+          done
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

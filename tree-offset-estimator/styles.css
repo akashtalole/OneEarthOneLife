@@ -150,6 +150,32 @@ button {
   margin: 0.25rem 0 1.25rem;
 }
 
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0;
+}
+
+.hint a {
+  color: var(--green-600);
+}
+
+.tree-grid {
+  font-size: 1.4rem;
+  line-height: 1.9;
+  letter-spacing: 0.15rem;
+  word-break: break-all;
+  margin-bottom: 1.25rem;
+}
+
+.tree-grid .more {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: normal;
+  margin-top: 0.4rem;
+}
+
 .comparison {
   margin: 1rem 0 1.5rem;
 }
@@ -214,12 +240,6 @@ button {
   .message {
     background: rgba(67, 160, 71, 0.15);
   }
-}
-
-.tree-link {
-  display: inline-block;
-  text-decoration: none;
-  margin: 0.25rem 0 1rem;
 }
 
 .footnote {

@@ -5,8 +5,10 @@ five minutes or five hours.
 
 ## As an individual
 
-- **Know your footprint** — try the [Carbon Footprint Calculator](../calculator/) to see
-  where your biggest impact comes from.
+- **Know your footprint** — try the [Carbon Footprint Calculator](../calculator/) and
+  [Water Footprint Calculator](../water-footprint/) to see where your biggest impact
+  comes from, then check the [Tree Offset Estimator](../tree-offset/) for a sense of
+  scale.
 - **Reduce waste** — favor reusable over single-use, compost where you can, and recycle
   correctly.
 - **Save water and energy** — small habits like shorter showers, efficient appliances,

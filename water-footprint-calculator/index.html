@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Footprint Calculator · OneEarthOneLife</title>
+  <meta name="description" content="Estimate your daily water footprint from direct household use and the hidden 'virtual water' in your diet." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%232e7d32%22/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">🌍 OneEarthOneLife</a>
+      <h1>Water Footprint Calculator</h1>
+      <p class="subtitle">
+        Most of your water footprint is hidden in what you eat, not what comes out of the
+        tap. This gives a rough, educational estimate of both.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="calculator" novalidate>
+      <section class="card">
+        <h2>🚿 Direct household use</h2>
+
+        <label for="showerMinutes">Shower length (minutes)</label>
+        <input type="number" id="showerMinutes" name="showerMinutes" min="0" step="1" value="8" inputmode="numeric" />
+
+        <label for="showersPerWeek">Showers per week</label>
+        <input type="number" id="showersPerWeek" name="showersPerWeek" min="0" step="1" value="7" inputmode="numeric" />
+
+        <label for="bathsPerWeek">Baths per week (≈150 L each)</label>
+        <input type="number" id="bathsPerWeek" name="bathsPerWeek" min="0" step="1" value="0" inputmode="numeric" />
+
+        <label for="toilet">Toilet type</label>
+        <select id="toilet" name="toilet">
+          <option value="6">Efficient / low-flow (≈6 L per flush)</option>
+          <option value="9" selected>Standard (≈9 L per flush)</option>
+          <option value="13">Older / high-flow (≈13 L per flush)</option>
+        </select>
+
+        <label for="flushesPerDay">Flushes per day (per person)</label>
+        <input type="number" id="flushesPerDay" name="flushesPerDay" min="0" step="1" value="5" inputmode="numeric" />
+
+        <label for="laundryLoads">Laundry loads per week (household)</label>
+        <input type="number" id="laundryLoads" name="laundryLoads" min="0" step="1" value="4" inputmode="numeric" />
+
+        <label for="dishwashing">Dishwashing method</label>
+        <select id="dishwashing" name="dishwashing">
+          <option value="15">Dishwasher, efficient (≈15 L/load)</option>
+          <option value="40" selected>Hand-washing, tap running (≈40 L/session)</option>
+          <option value="20">Hand-washing, basin (≈20 L/session)</option>
+        </select>
+
+        <label for="dishSessions">Dishwashing sessions per week (household)</label>
+        <input type="number" id="dishSessions" name="dishSessions" min="0" step="1" value="7" inputmode="numeric" />
+
+        <label for="household">People in your household (some items are shared)</label>
+        <input type="number" id="household" name="household" min="1" step="1" value="1" inputmode="numeric" />
+      </section>
+
+      <section class="card">
+        <h2>🍽️ Diet (hidden "virtual water")</h2>
+        <p class="hint">
+          Growing food and raising livestock uses far more water than any tap ever will —
+          this is usually the biggest share of your footprint by a wide margin.
+        </p>
+
+        <label for="diet">Which best describes your diet?</label>
+        <select id="diet" name="diet">
+          <option value="5000">Meat-heavy (meat most meals)</option>
+          <option value="3800" selected>Average (meat a few times a week)</option>
+          <option value="2900">Low-meat / pescatarian</option>
+          <option value="2600">Vegetarian</option>
+          <option value="2000">Vegan</option>
+        </select>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Calculate my water footprint</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="results" class="card results" hidden aria-live="polite">
+      <h2>Your estimated daily water footprint</h2>
+
+      <div class="totals">
+        <div class="total-block">
+          <span class="total-label">Direct household use</span>
+          <span class="total-value" id="directValue">0</span>
+          <span class="total-unit">L / day</span>
+        </div>
+        <div class="total-block">
+          <span class="total-label">Dietary (virtual water)</span>
+          <span class="total-value" id="dietValue">0</span>
+          <span class="total-unit">L / day</span>
+        </div>
+        <div class="total-block total-block--combined">
+          <span class="total-label">Combined total</span>
+          <span class="total-value" id="totalValue">0</span>
+          <span class="total-unit">L / day (<span id="totalGallons">0</span> gal)</span>
+        </div>
+      </div>
+
+      <h3>Direct-use breakdown</h3>
+      <ul id="breakdown" class="breakdown"></ul>
+
+      <p id="message" class="message"></p>
+
+      <p class="footnote">
+        Direct-use figures use commonly published fixture and appliance averages. Dietary
+        "virtual water" figures are rough per-day averages adapted from water-footprint
+        research (Hoekstra &amp; Mekonnen) and vary widely by specific foods and where
+        they're grown — treat these as order-of-magnitude estimates for awareness, not a
+        precise water audit. See the
+        <a href="../calculator/">Carbon Footprint Calculator</a> and
+        <a href="../get-involved/">Get Involved</a> for more.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="../">&larr; Back to OneEarthOneLife</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

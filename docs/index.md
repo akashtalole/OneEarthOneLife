@@ -15,13 +15,44 @@ OneEarthOneLife is an open initiative for anyone who wants to understand, protec
 restore the natural world — through knowledge, small daily actions, and collective effort.
 
 [Get Involved](get-involved.md){ .md-button .md-button--primary }
-[Calculate My Footprint](calculator/){ .md-button }
 [See Earth Pulse](earth-pulse.md){ .md-button }
 [Learn More](about.md){ .md-button }
 
 </div>
 
 ---
+
+## Try the tools
+
+<div class="grid cards" markdown>
+
+-   :material-molecule-co2: **Carbon Footprint Calculator**
+
+    ---
+
+    Estimate your annual CO₂e from home energy, transport, flights, diet, and
+    consumption.
+
+    [Open calculator](calculator/){ .md-button }
+
+-   :material-water: **Water Footprint Calculator**
+
+    ---
+
+    See your direct household water use alongside the much larger hidden footprint of
+    your diet.
+
+    [Open calculator](water-footprint/){ .md-button }
+
+-   :material-tree: **Tree Offset Estimator**
+
+    ---
+
+    Get a rough sense of scale: how many trees it would take to absorb your footprint.
+
+    [Open estimator](tree-offset/){ .md-button }
+
+</div>
 
 ## Why it matters
 

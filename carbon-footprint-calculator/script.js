@@ -15,6 +15,7 @@ const barYouEl = document.getElementById("barYou");
 const barYouLabelEl = document.getElementById("barYouLabel");
 const breakdownEl = document.getElementById("breakdown");
 const messageEl = document.getElementById("message");
+const treeOffsetLinkEl = document.getElementById("treeOffsetLink");
 
 function numberFromField(name) {
   const el = form.elements[name];
@@ -89,6 +90,8 @@ function render({ total, breakdown }) {
     });
 
   messageEl.textContent = messageFor(total);
+
+  treeOffsetLinkEl.href = `../tree-offset/?tonnes=${encodeURIComponent(total.toFixed(1))}`;
 
   results.scrollIntoView({ behavior: "smooth", block: "start" });
 }

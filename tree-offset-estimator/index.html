@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tree Offset Estimator · OneEarthOneLife</title>
+  <meta name="description" content="Estimate roughly how many trees it would take to offset your annual carbon footprint." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%232e7d32%22/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">🌍 OneEarthOneLife</a>
+      <h1>Tree Offset Estimator</h1>
+      <p class="subtitle">
+        A rough sense of scale for how many trees it takes to absorb a given amount of
+        CO₂ — useful for context, not a substitute for cutting emissions.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="calculator" novalidate>
+      <section class="card">
+        <h2>🌡️ Your footprint</h2>
+
+        <label for="tonnes">Annual CO₂e footprint (tonnes)</label>
+        <input type="number" id="tonnes" name="tonnes" min="0" step="0.1" value="4.7" inputmode="decimal" />
+        <p class="hint">
+          Not sure? Try the <a href="../calculator/">Carbon Footprint Calculator</a> first —
+          come back here with your number, or follow the link it gives you.
+        </p>
+
+        <label for="years">Offset for how many years?</label>
+        <input type="number" id="years" name="years" min="1" step="1" value="1" inputmode="numeric" />
+
+        <label for="treeType">Tree absorption rate</label>
+        <select id="treeType" name="treeType">
+          <option value="10">Young / newly planted tree (≈10 kg CO₂/year)</option>
+          <option value="21" selected>Average mature tree (≈21 kg CO₂/year)</option>
+          <option value="35">Fast-growing / large mature tree (≈35 kg CO₂/year)</option>
+        </select>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Estimate trees needed</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="results" class="card results" hidden aria-live="polite">
+      <h2>Estimated trees needed</h2>
+      <p class="total"><span id="treeCount">0</span> trees</p>
+
+      <div id="treeGrid" class="tree-grid" aria-hidden="true"></div>
+
+      <p id="message" class="message"></p>
+
+      <p class="footnote">
+        Based on a widely-cited rough average of ~21 kg CO₂ absorbed per year by a mature
+        tree — actual absorption varies enormously by species, age, climate, and soil, and
+        a newly planted tree takes years to decades to reach its mature absorption rate.
+        Planting trees is valuable, but reducing emissions at the source matters more —
+        see <a href="../get-involved/">Get Involved</a> and
+        <a href="../resources/">Resources</a> for reputable reforestation organizations.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="../">&larr; Back to OneEarthOneLife</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
